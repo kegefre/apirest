@@ -13,12 +13,14 @@ import br.com.tiacademy.catalogo.repository.ArtistaRepository;
 @RestController
 @RequestMapping("/artista")
 
-public class ArtistController {
+public class ArtistController extends ControllerCatalogo<Artista, Long>{
+
+	
 	
 	@Autowired
 	private ArtistaRepository artistaRepository;
 	@GetMapping
-	public List<Artista> todosArtista() {
+	public List<Artista> todosArtistas() {
 		return artistaRepository.findAll();
 	}
 	

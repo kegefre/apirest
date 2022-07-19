@@ -11,10 +11,10 @@
 		</not>
 	</preConditions>
 	<createTable tableName="VENDEDOR">
-		<column name="ID" type="INT">
+		<column name="ID" type="${numerico}">
 			<constraints nullable="false" primaryKey="true" primaryKeyName="PK_VENDEDOR"/>
 		</column>
-		<column name="NOME" type="VARCHAR(255)">
+		<column name="NOME" type="${descricao}">
 		<constraints nullable="false"/>
 		</column>
 	</createTable>
@@ -27,10 +27,10 @@
 		</not>
 	</preConditions>
 	<createTable tableName="CLIENTE">
-		<column name="ID" type="INT">
+		<column name="ID" type="${numerico}">
 			<constraints nullable="false" primaryKey="true" primaryKeyName="PK_CLIENTE"/>
 		</column>
-		<column name="NOME" type="VARCHAR(255)">
+		<column name="NOME" type="${descricao}">
 		<constraints nullable="false"/>
 		</column>
 	</createTable>

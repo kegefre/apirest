@@ -1,0 +1,50 @@
+package br.com.tiacademy.vendas.controller;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.tiacademy.vendas.domain.Vendedor;
+
+@RestController
+@RequestMapping("/vendedor")
+public class VendedorController {
+
+	@GetMapping
+	public ResponseEntity<List<Vendedor>> listar(){
+		
+		//var vendedor = new Vendedor();
+		Vendedor um = new Vendedor();
+		um.setId(1L);
+		um.setNome("João");
+		
+		Vendedor dois = new Vendedor();
+		dois.setId(2L);
+		dois.setNome("Manuel");
+		
+		List<Vendedor>vendedores =Arrays.asList(um,dois);
+		return ResponseEntity.ok(vendedores);
+	}
+	
+	/*public ResponseEntity<String> nomeVendedor(){
+		return ResponseEntity.ok("Kellis");
+	}
+	
+	@GetMapping("/nome")
+	public String nome(){
+		return "Kellis2";
+	}
+	@GetMapping("/nome/n")
+	public String nome3(){
+		return "Kellis3";
+	}
+	*/
+	/*public String nomeVendedor() {
+		return "Kellis";
+	}*/
+	
+}

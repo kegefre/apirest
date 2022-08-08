@@ -3,6 +3,8 @@ package br.com.tiacademy.vendas.core.crud;
 import java.util.List;
 import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public abstract class CrudService<T, ID> {
 
@@ -11,6 +13,10 @@ public abstract class CrudService<T, ID> {
 	
 	public List<T> listar() {
 		return repository.findAll();
+	}
+	
+	public Page<T> paginada(Pageable pagina) {
+		return repository.findAll(pagina);
 	}
 	
 	public T porId(ID id) {
